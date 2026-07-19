@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# ARP
+arp -a
+ip neigh
+
+# Wireshark
+Capture:
+        DNS
+        HTTP
+        TCP
+        ICMP
+
+Filters:
+        http
+        dns
+        tcp
+        icmp
+        ftp
+        smtp
+
+# FTP
+ftp TARGET_IP
+
+# Telnet
+telnet TARGET_IP 23
+
+# SMTP Banner
+telnet TARGET_IP 25
+
+# SNMP (if enabled in your lab)
+snmpwalk -v2c -c public TARGET_IP
