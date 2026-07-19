@@ -1,0 +1,29 @@
+#!/bin/bash 
+
+# chech wordlists
+ls /usr/share/wordlists
+
+gzip -d /usr/share/wordlists/rockyou.txt.gz
+
+head /usr/share/wordlists/rockyou.txt
+
+# John the Ripper
+john --help
+
+john hash.txt
+
+john --show hash.txt
+
+Use only training hashes or hashes from authorized lab exercises.
+
+# Hashcat
+hashcat --help
+
+hashcat -I
+
+Practice with sample hashes from training platforms.
+
+# Hash Identification
+hashid HASH
+
+hash-identifier
