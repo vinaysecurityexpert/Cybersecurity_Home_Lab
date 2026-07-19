@@ -1,0 +1,79 @@
+#!/bin/bash
+
+# DVWA
+
+If using Docker:
+docker ps
+docker start CONTAINER_ID
+
+or
+
+docker run -d -p 80:80 vulnerables/web-dvwa
+Lab 2 – Verify Access
+
+Open: http://localhost/login.php
+
+Login:
+admin
+password
+
+# Browser Proxy
+Configure: 127.0.0.1:8080
+
+# Burp Proxy
+
+Practice
+
+Intercept ON
+Forward
+Drop
+Intercept OFF
+
+# Repeater
+Send a request to Repeater.
+Modify a non-sensitive parameter in DVWA.
+Observe how the response changes.
+
+# Decoder
+
+Practice
+
+Base64
+URL Encoding
+Hex
+
+# Comparer
+
+Compare
+
+Two GET requests
+Two POST requests
+Different responses
+
+# Cookies
+
+Inspect
+
+PHPSESSID
+Security level
+Cookie attributes
+
+# HTTP Requests
+
+Observe
+
+Method
+Headers
+Cookies
+Parameters
+Response
+
+# HTTP Status Codes
+
+Trigger and identify
+
+200
+301/302
+403
+404
+500 (if available in the lab)
