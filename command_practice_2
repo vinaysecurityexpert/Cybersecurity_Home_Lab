@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# metasploit
+msfconsole
+
+# help command
+help
+
+# search MODULE
+search ftp
+search samba
+
+# use MODULE
+use MODULE
+
+# options of module
+show options
+
+
+# set remote host ip address
+set RHOSTS TARGET_IP
+run
+
+Use only modules appropriate for your Metasploitable2 lab.
+
+# Meterpreter
+if a session is established in your lab
+
+sysinfo
+getuid
+pwd
+ls
+cd
+shell
+background
+sessions
