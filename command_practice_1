@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Verify Lab
+ip addr
+ping TARGET_IP
+arp -a
+
+# Host Discovery
+nmap TARGET_IP
+nmap -sn 192.168.56.x/24
+
+# Service Enumeration
+nmap -sV TARGET_IP
+nmap -sC TARGET_IP
+nmap -A TARGET_IP
+nmap -O TARGET_IP
+nmap -p- TARGET_IP
+
+# Banner Grabbing
+nc -v TARGET_IP 80
+telnet TARGET_IP 25
+
+# Web Enumeration
+nikto -h http://TARGET_IP
+gobuster dir \
+-u http://TARGET_IP \
+-w /usr/share/wordlists/dirb/common.txt
+
+# DNS Enumeration (only against systems you own or are authorized to assess)
+dnsenum example.com
+dnsrecon -d example.com
