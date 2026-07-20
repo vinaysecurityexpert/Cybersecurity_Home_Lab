@@ -1,0 +1,128 @@
+# Verify DVWA
+
+Objective: Ensure DVWA is running correctly.
+
+Steps:
+Start Docker (if needed).
+Verify the container is running.
+Open DVWA in your browser.
+Log in.
+Set the security level to Low.
+
+Commands:
+docker ps
+docker start <container_id>
+docker logs <container_id>
+
+# Understand the HTTP Request
+
+Objective: See how the browser communicates with DVWA.
+
+Steps:
+Open the SQL Injection page.
+Enable Intercept in Burp Suite.
+Submit a normal request.
+
+Observe:
+HTTP Method
+URL
+Query parameters
+Cookies
+Headers
+Deliverables
+Screenshot of intercepted request
+Notes describing each part of the request
+
+#Analyze the Response
+
+Objective: Understand how the server responds.
+
+Observe:
+
+Status code
+Content-Length
+Response body
+Cookies
+Server header
+Deliverables
+Screenshot
+Response analysis
+
+# Compare DVWA Security Levels
+
+Repeat the same workflow using:
+Low
+Medium
+High
+
+Record:
+Input validation differences
+Error messages
+Application behavior
+Security improvements
+
+# Burp Repeater
+
+Objective: Learn how Repeater works.
+
+Steps:
+Send the intercepted request to Repeater.
+Resend the request.
+Modify only non-sensitive values (for example, change a normal numeric ID to another valid numeric ID).
+Observe how the response changes.
+
+Deliverables:
+Original request
+Modified request
+Comparison notes
+
+# Read the DVWA Source Code
+
+DVWA provides the vulnerable PHP code.
+
+Look for:
+User input
+SQL query construction
+Database function used
+Validation (or lack of validation)
+
+# SQLMap Detection (Authorized Lab Only)
+
+Objective: Learn how an automated scanner identifies SQL injection.
+
+Against your local DVWA:
+Run SQLMap against the vulnerable page.
+Read its output.
+
+Identify:
+Database type
+Injectable parameter
+Risk level
+Recommended next steps
+
+# Browser Developer Tools
+
+Open Developer Tools (F12).
+
+Inspect:
+Network tab
+Request headers
+Response headers
+Cookies
+Query parameters
+
+Compare them with Burp Suite.
+
+# Compare GET vs POST
+
+Use two DVWA pages that submit data differently.
+
+Observe:
+URL
+Request body
+Headers
+Parameters
+
+# Secure Coding Exercise
+
+Rewrite the vulnerable query using a prepared statement .
