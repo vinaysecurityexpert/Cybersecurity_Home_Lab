@@ -1,0 +1,120 @@
+# Start Your Lab
+Objective: Verify that all required applications are running.
+
+Commands:
+
+docker ps
+docker start <dvwa_container_id>
+docker start <juice_shop_container_id>
+docker logs <dvwa_container_id>
+docker logs <juice_shop_container_id>
+
+Verify:
+DVWA → http://localhost
+Juice Shop → http://localhost:3000
+
+# Reflected XSS (DVWA)
+Objective: Understand how reflected input is displayed.
+
+Steps:
+Open the Reflected XSS page.
+Set DVWA security to Low.
+Enter normal text (e.g., Hello).
+Observe how it is reflected.
+Repeat on Medium and High.
+
+Record:
+Request
+Response
+HTML output
+Security level differences
+
+# Stored XSS (DVWA)
+Objective: Understand how stored user input is displayed.
+
+Steps:
+Open the Stored XSS page.
+Submit benign text (e.g., "Testing guestbook").
+Refresh the page.
+Observe how the content is stored and displayed.
+Compare behavior across Low, Medium, and High.
+
+Record:
+Where the data is stored
+How it is rendered
+Differences between security levels
+
+# Inspect Requests with Burp Suite
+Objective: Analyze HTTP traffic.
+
+Steps:
+Enable Intercept.
+Submit data to DVWA.
+
+Observe:
+Method
+URL
+Headers
+Cookies
+Parameters
+Forward the request.
+
+# Burp Repeater
+Objective: Learn request replay.
+
+Steps:
+Send the captured request to Repeater.
+Modify non-sensitive input (for example, change the guestbook message).
+Send again.
+Compare responses.
+
+Record:
+Original request
+Modified request
+Response differences
+
+# Browser Developer Tools
+Objective: Inspect the browser's behavior.
+
+examine:
+Network
+Elements
+Sources
+Console
+Storage
+Cookies
+
+# DOM Inspection
+Objective: Understand client-side rendering.
+
+Inspect the page source and JavaScript.
+
+Look for:
+innerHTML
+textContent
+innerText
+
+# OWASP Juice Shop
+Objective: Explore XSS-related challenges.
+
+Tasks:
+Register an account.
+Browse the application.
+Complete beginner XSS lessons/challenges.
+Read the challenge hints.
+	
+# Secure Coding Review
+
+Open the vulnerable source code in DVWA.
+
+Identify:
+User input
+Output location
+HTML generation
+JavaScript rendering
+
+Rewrite the vulnerable logic using:
+
+Output encoding
+textContent
+Input validation
